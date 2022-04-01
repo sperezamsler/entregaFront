@@ -10,10 +10,13 @@ export default class Container extends React.Component {
             historial: [],
             opActual: 1,
             varActual:"",
-            historial: [],
         };
     }
 
+    componentDidUpdate(){
+        console.log(this.state.opActual+this.state.varActual);
+    }
+    
     opcionA = () => {
         if (this.state.opActual < 5)
         {
