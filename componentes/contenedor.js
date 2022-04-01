@@ -3,7 +3,7 @@ import json from "../api/data"
 import Historia from "./historia";
 import Opciones from "./opciones";
 
-export default class Conteiner extends React.Component {
+export default class Container extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -20,7 +20,7 @@ export default class Conteiner extends React.Component {
             this.setState({opActual: this.state.opActual+1})
             this.setState({varActual: "a"})
         } else {
-            alert("Se acabo el juego amigo!")
+            alert("!Historia terminada!")
         }
         
     }
@@ -31,7 +31,7 @@ export default class Conteiner extends React.Component {
             this.setState({opActual: this.state.opActual+1})
             this.setState({varActual: "b"})
         } else {
-            alert("Se acabo el juego amigo!")
+            alert("!Historia terminada!")
         }
     
     }
@@ -48,7 +48,6 @@ export default class Conteiner extends React.Component {
         const data = json
         return(
             <>
-            {/* <Historia historia = {data[() => {this.buscarPorID(this.state.opActual+this.state.varActual)}].historia}></Historia> */}
             <Historia historia = {data[this.buscarPorID(data,this.state.opActual+this.state.varActual)].historia}></Historia>
             <Opciones opcion = {data[this.buscarPorID(data,this.state.opActual+this.state.varActual)].opciones} opcionA = {this.opcionA} opcionB = {this.opcionB}/>
             </>
